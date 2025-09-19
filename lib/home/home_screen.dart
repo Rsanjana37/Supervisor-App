@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:supervisor/constants/app_colors.dart';
+import 'package:supervisor/home/home_dashboard.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,6 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final screenHeight = MediaQuery.of(context).size.height;
     final appBarHeight = screenHeight * 0.14;
     return Scaffold(
+      backgroundColor: AppColors.homeAppBarBgColor,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(appBarHeight),
         child: AppBar(
@@ -59,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-      body: Center(child: Text("Home")),
+      body: DashboardScreen(),
     );
   }
 }

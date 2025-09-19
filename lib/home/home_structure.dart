@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:supervisor/constants/app_colors.dart';
 import 'package:supervisor/home/home_screen.dart';
+import 'package:supervisor/tasks/task_reports.dart';
 
 class MyHome extends StatefulWidget {
   const MyHome({super.key});
@@ -22,7 +23,7 @@ class _MyHomeState extends State<MyHome> {
       //activepage = LeafletMapScreen();
     }
     if (_selectedIndex == 2) {
-      //activepage = UserReports();
+      activepage = TaskDashboard();
     }
     if (_selectedIndex == 3) {
       //activepage = UserProfileScreen();
