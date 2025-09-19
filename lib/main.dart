@@ -1,4 +1,4 @@
-import 'package:supervisor/auth/login_screen.dart';
+import 'package:supervisor/auth/login_with_email.dart';
 import 'package:supervisor/constants/app_text_themes.dart';
 //import 'package:crowdsource/firebaseMessaging/firebase_api.dart';
 //import 'package:crowdsource/firebase_request_permission.dart';
@@ -8,36 +8,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 //import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-//
-//// ✅ TOP-LEVEL handler
-//@pragma('vm:entry-point')
-//Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-//  await Firebase.initializeApp();
-//  debugPrint('Background message ID: ${message.messageId}');
-//  debugPrint('Title: ${message.notification?.title}');
-//  debugPrint('Body: ${message.notification?.body}');
-//}
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // await Firebase.initializeApp(
-  //   name: "crowdsource",
-  //   options: const FirebaseOptions(
-  //     apiKey: "AIzaSyD4UWMsla3jJc9cx8o1F3YxSH5adrPK1So",
-  //     appId: "1:198611414016:android:cdfecc8b771098a43c7ce5",
-  //     messagingSenderId: "198611414016",
-  //     projectId: "crowdsource-d9375",
-  //   ),
-  // );
-
-  // ✅ Register the background handler BEFORE runApp
-  // FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
-
-  // ✅ Ask user for notification permission (Android 13+ / iOS)
-  //await requestNotificationPermission();
-
-  // ✅ Initialize other Firebase Messaging config (foreground listeners, token, etc.)
+  await Firebase.initializeApp(
+    name: "supervisor",
+    options: const FirebaseOptions(
+      apiKey: "AIzaSyBlg82az5zld6jAFI6vsU97PPzSIF74cEE",
+      appId: "1:130574865111:android:a3d27d4ce2cee820e45692",
+      messagingSenderId: "130574865111",
+      projectId: "supervisor-40772",
+    ),
+  );
 
   runApp(const ProviderScope(child: MyApp()));
 }
@@ -64,7 +47,7 @@ class MyApp extends StatelessWidget {
       ],
       // locale: Locale('hi'),
       // supportedLocales: [Locale('en'), Locale('hi')],
-      home: LoginScreen(),
+      home: LoginWithEmail(),
     );
   }
 }
